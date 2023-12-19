@@ -56,14 +56,17 @@ export default function Header() {
               },
             }}
           >
-            {templates.map((item) => ( 
-              <ListItemButton>
-              <ListItemText sx={{
-                        textTransform: "capitalize",
-                        textAlign: "center",
-                        fontWeight: 600,
-                      }} primary={item} />
-            </ListItemButton>    
+            {templates.map((item) => (
+              <ListItemButton key={item}>
+                <ListItemText
+                  sx={{
+                    textTransform: "capitalize",
+                    textAlign: "center",
+                    fontWeight: 600,
+                  }}
+                  primary={item}
+                />
+              </ListItemButton>
             ))}
           </Box>
 
@@ -73,7 +76,6 @@ export default function Header() {
             aria-label="open drawer"
             onClick={toggleDrawer(true)}
             sx={{
-              mr: 2,
               display: {
                 xs: "block",
                 sm: "none",
@@ -101,8 +103,8 @@ export default function Header() {
               }}
             >
               {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
-              <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}    >
-                <CloseIcon  />
+              <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}>
+                <CloseIcon />
               </IconButton>
 
               <Stack direction="column" gap={2}>
@@ -120,7 +122,7 @@ export default function Header() {
 
               <Box sx={{ mb: 2 }}>
                 {templates.map((item) => (
-                  <ListItemButton>
+                  <ListItemButton key={item}>
                     <ListItemText
                       sx={{
                         textTransform: "capitalize",

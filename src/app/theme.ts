@@ -22,6 +22,9 @@ export const theme = createTheme({
       },
     },
     palette: {
+      background: {
+        default: "#7E7E7E"
+      },
       mode: "light",
       primary: {
         main: "#202020",
@@ -29,10 +32,8 @@ export const theme = createTheme({
         contrastText: "#fff",
       },
       secondary: {
-        main: "#333",
-        dark: "#222",
-        contrastText: "#fff",
-      },
+        main: "#CACACA"
+      }
     },
     breakpoints: {
       values: {

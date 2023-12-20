@@ -1,6 +1,14 @@
+"use client";
+
 import { Avatar } from "@mui/material";
+import { useRouter } from 'next/navigation'
 
 export default function Logo() {
+  const router = useRouter();
+  const handleOnClick = () =>{
+    router.push("/")
+  }
+
   return (
     <Avatar
       src="/logo-branca.svg"
@@ -8,9 +16,9 @@ export default function Logo() {
       sx={{
         width: 30,
         height: "auto",
-        mr: 1,
-        cursor: "pointer",
+        cursor: "pointer"
       }}
+      onClick={handleOnClick}
     />
   );
 }

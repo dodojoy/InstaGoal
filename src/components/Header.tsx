@@ -22,8 +22,7 @@ import ImageIcon from "@mui/icons-material/Image";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Logo from "./Logo";
 import { Stack } from "@mui/material";
-
-const templates = ["gol", "resultados", "cartão", "substituição", "escalação"];
+import TemplateList from "./TemplateList";
 
 export default function Header() {
   //react useState hook to save the current open/close state of the drawer, normally variables dissapear afte the function was executed
@@ -44,7 +43,7 @@ export default function Header() {
   return (
     <AppBar position="static" sx={{ backgroundColor: "primary.main" }}>
       <Container maxWidth="lg" disableGutters>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between"}}>
           <Logo />
 
           <Box
@@ -56,18 +55,7 @@ export default function Header() {
               },
             }}
           >
-            {templates.map((item) => (
-              <ListItemButton key={item}>
-                <ListItemText
-                  sx={{
-                    textTransform: "capitalize",
-                    textAlign: "center",
-                    fontWeight: 600,
-                  }}
-                  primary={item}
-                />
-              </ListItemButton>
-            ))}
+            <TemplateList />
           </Box>
 
           <IconButton
@@ -121,19 +109,7 @@ export default function Header() {
               </Stack>
 
               <Box sx={{ mb: 2 }}>
-                {templates.map((item) => (
-                  <ListItemButton key={item}>
-                    <ListItemText
-                      sx={{
-                        textTransform: "capitalize",
-                        textAlign: "center",
-                        fontWeight: 600,
-                        color: "#6D6D6D",
-                      }}
-                      primary={item}
-                    />
-                  </ListItemButton>
-                ))}
+                <TemplateList />
               </Box>
             </Box>
           </Drawer>

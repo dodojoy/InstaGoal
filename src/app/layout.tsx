@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { theme } from "./theme";
 import CssBaseline from "@mui/material/CssBaseline";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Insta Goal",
@@ -16,9 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><link rel="icon" href="/logo-verde.svg" sizes="any" /></head>
+      
       <body style={{ margin: 0}}>
+      
         <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Header />
         {children}</ThemeProvider>
       </body>
     </html>

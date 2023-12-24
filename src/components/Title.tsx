@@ -7,6 +7,6 @@ interface TitleProps{
 
 export default function Title({title}: TitleProps){
     return(
-    <Typography fontSize="20px" fontWeight={700} color="rgba(233, 232, 232, 1)" >{title}</Typography>
+    <Typography fontSize="20px" fontWeight={700} color="rgba(233, 232, 232, 1)" mb={8} >{title}</Typography>
     )
 }

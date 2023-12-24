@@ -32,7 +32,8 @@ export const theme = createTheme({
         contrastText: "#fff",
       },
       secondary: {
-        main: "#CACACA"
+        main: "#CACACA",
+        dark: "#4A4A4A"
       }
     },
     breakpoints: {

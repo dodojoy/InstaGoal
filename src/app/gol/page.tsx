@@ -5,6 +5,7 @@ import GlobalSelect from "@/components/GlobalSelect";
 import GrayBtn from "@/components/GrayBtn";
 import GreenBtn from "@/components/GreenBtn";
 import GridContainer from "@/components/Grid";
+import Scoreboard from "@/components/Scoreboard";
 import TimeSelect from "@/components/TimeSelect";
 import Title from "@/components/Title";
 import { useState } from "react";
@@ -45,6 +46,8 @@ export default function GolPage() {
               <TimeSelect />
             </GridContainer>
           </GridContainer>
+
+         <Scoreboard firstSrc="/palmas-logo.svg" secondSrc="/spfc-logo.svg" firstTeamGoal={0} secondTeamGoal={0}/> 
 
           <div
             style={{

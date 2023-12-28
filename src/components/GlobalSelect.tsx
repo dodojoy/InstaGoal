@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Select from "react-select";
-
+  
 export default function GlobalSelect() {
   const options = [
     { value: "Jogador", label: "Jogador" },

@@ -70,14 +70,14 @@ export default function GoalPage() {
               </GridContainer>
             </GridContainer>
 
-            <GridContainer container={true} spacing={1}>
-              {!isCreateClicked && <><GridContainer item={true} xs={9}>
+            <GridContainer container={true} sx={{justifyContent: "space-between"}}>
+              {!isCreateClicked && <><GridContainer item={true} xs={8.8}>
                 <GrayBtn onClick={handleModal} text="Visualizar" />
               </GridContainer>
               <GridContainer item={true} xs={3}>
                 <GrayBtn src="download-icon.svg" />
               </GridContainer></> }
-              {isCreateClicked && <><GridContainer item={true} xs={9}>
+              {isCreateClicked && <><GridContainer item={true} xs={8.8}>
                 <GreenBtn onClick={handleModal} text="Visualizar" />
               </GridContainer>
               <GridContainer item={true} xs={3}>

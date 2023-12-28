@@ -101,10 +101,10 @@ export default function ResultadoPage() {
             </GridContainer>
           </GridContainer>
 
-          <GridContainer container={true} spacing={1}>
+          <GridContainer container={true} sx={{justifyContent: "space-between"}}>
             {!isCreateClicked && (
               <>
-                <GridContainer item={true} xs={9}>
+                <GridContainer item={true} xs={8.5}>
                   <GrayBtn onClick={handleModal} text="Visualizar" />
                 </GridContainer>
                 <GridContainer item={true} xs={3}>
@@ -114,7 +114,7 @@ export default function ResultadoPage() {
             )}
             {isCreateClicked && (
               <>
-                <GridContainer item={true} xs={9}>
+                <GridContainer item={true} xs={8.5}>
                   <GreenBtn onClick={handleModal} text="Visualizar" />
                 </GridContainer>
                 <GridContainer item={true} xs={3}>

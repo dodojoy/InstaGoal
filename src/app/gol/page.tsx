@@ -5,17 +5,24 @@ import GlobalSelect from "@/components/GlobalSelect";
 import GrayBtn from "@/components/GrayBtn";
 import GreenBtn from "@/components/GreenBtn";
 import GridContainer from "@/components/Grid";
+import Modal from "@/components/Modal";
 import Scoreboard from "@/components/Scoreboard";
 import TimeSelect from "@/components/TimeSelect";
 import Title from "@/components/Title";
 import { useState } from "react";
 
-export default function GolPage() {
+export default function GoalPage() {
   const [isCreateClicked, setIsCreateClicked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleCreateClick = () => {
     setIsCreateClicked(true);
   };
+
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen)
+    console.log(isModalOpen)
+  }
 
   return (
     <>
@@ -65,20 +72,24 @@ export default function GolPage() {
 
             <GridContainer container={true} spacing={1}>
               {!isCreateClicked && <><GridContainer item={true} xs={9}>
-                <GrayBtn text="Visualizar" />
+                <GrayBtn onClick={handleModal} text="Visualizar" />
               </GridContainer>
               <GridContainer item={true} xs={3}>
                 <GrayBtn src="download-icon.svg" />
               </GridContainer></> }
               {isCreateClicked && <><GridContainer item={true} xs={9}>
-                <GreenBtn text="Visualizar" />
+                <GreenBtn onClick={handleModal} text="Visualizar" />
               </GridContainer>
               <GridContainer item={true} xs={3}>
                 <GreenBtn src="download-icon.svg" />
               </GridContainer></>}
             </GridContainer>
+            
+            <Modal open={isModalOpen} onClose={handleModal}/>
           </div>
         </div>
+        
+
       </div>
     </>
   );

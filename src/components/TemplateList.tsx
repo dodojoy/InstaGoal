@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function TemplateList() {
   const templates = [
     { name: "gol", href: "/gol" },
-    { name: "resultados", href: "/resultados" },
+    { name: "resultado", href: "/resultado" },
     { name: "cartão", href: "/cartao" },
     { name: "substituição", href: "/substituicao" },
     { name: "escalação", href: "escalacao" },

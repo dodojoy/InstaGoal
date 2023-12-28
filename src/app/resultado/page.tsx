@@ -53,7 +53,7 @@ export default function ResultadoPage() {
           secondTeamGoal={0}
         />
         <Stack direction="row" width="100%">
-          <RadioGroup row>
+          <RadioGroup row sx={{ width: "100%", justifyContent: "space-between"}}>
             <FormControlLabel
               label="1º tempo"
               value="1º tempo"

@@ -4,9 +4,11 @@ import CreateBtn from "@/components/CreateBtn";
 import GlobalSelect from "@/components/GlobalSelect";
 import GrayBtn from "@/components/GrayBtn";
 import GreenBtn from "@/components/GreenBtn";
+import GreenTemplateViewDownloadBar from "@/components/GreenTemplateViewDownloadBar";
 import GridContainer from "@/components/Grid";
 import Modal from "@/components/Modal";
 import Scoreboard from "@/components/Scoreboard";
+import TemplateViewDownloadBar from "@/components/TemplateViewDownloadBar";
 import TimeSelect from "@/components/TimeSelect";
 import Title from "@/components/Title";
 import { FormControl } from "@mui/base";
@@ -102,26 +104,8 @@ export default function ResultadoPage() {
           </GridContainer>
 
           <GridContainer container={true} sx={{justifyContent: "space-between"}}>
-            {!isCreateClicked && (
-              <>
-                <GridContainer item={true} xs={8.5}>
-                  <GrayBtn onClick={handleModal} text="Visualizar" />
-                </GridContainer>
-                <GridContainer item={true} xs={3}>
-                  <GrayBtn src="download-icon.svg" />
-                </GridContainer>
-              </>
-            )}
-            {isCreateClicked && (
-              <>
-                <GridContainer item={true} xs={8.5}>
-                  <GreenBtn onClick={handleModal} text="Visualizar" />
-                </GridContainer>
-                <GridContainer item={true} xs={3}>
-                  <GreenBtn src="download-icon.svg" />
-                </GridContainer>
-              </>
-            )}
+            {!isCreateClicked && <TemplateViewDownloadBar onClick={handleModal} />}
+            {isCreateClicked && <GreenTemplateViewDownloadBar onClick={handleModal} />}
           </GridContainer>
 
           <Modal open={isModalOpen} onClose={handleModal} />

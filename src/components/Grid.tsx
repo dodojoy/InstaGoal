@@ -8,6 +8,7 @@ interface GridProps {
   xs?: number;
   sx?: object;
   spacing?: number;
+  sm?: number
 }
 
 export default function GridContainer({
@@ -17,9 +18,10 @@ export default function GridContainer({
   xs,
   sx,
   spacing,
+  sm
 }: GridProps) {
   return (
-    <Grid container={container} item={item} xs={xs} sx={sx} spacing={spacing} maxWidth="sm">
+    <Grid container={container} item={item} xs={xs} sx={sx} spacing={spacing} maxWidth="sm" sm={sm}>
       {children}
     </Grid>
   );

@@ -1,4 +1,4 @@
-export default function GoalLayout({
+export default function CardLayout({
     children, 
   }: {
     children: React.ReactNode

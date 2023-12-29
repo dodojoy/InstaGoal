@@ -4,9 +4,11 @@ import CreateBtn from "@/components/CreateBtn";
 import GlobalSelect from "@/components/GlobalSelect";
 import GrayBtn from "@/components/GrayBtn";
 import GreenBtn from "@/components/GreenBtn";
+import GreenTemplateViewDownloadBar from "@/components/GreenTemplateViewDownloadBar";
 import GridContainer from "@/components/Grid";
 import Modal from "@/components/Modal";
 import Scoreboard from "@/components/Scoreboard";
+import TemplateViewDownloadBar from "@/components/TemplateViewDownloadBar";
 import TimeSelect from "@/components/TimeSelect";
 import Title from "@/components/Title";
 import { useState } from "react";
@@ -14,6 +16,12 @@ import { useState } from "react";
 export default function GoalPage() {
   const [isCreateClicked, setIsCreateClicked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const options = [
+    { value: "Jogador", label: "Jogador" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
 
   const handleCreateClick = () => {
     setIsCreateClicked(true);
@@ -45,11 +53,11 @@ export default function GoalPage() {
             gap: 35,
           }}
         >
-          <GridContainer container={true} spacing={1}>
-            <GridContainer item={true} xs={8}>
-              <GlobalSelect />
+          <GridContainer container sx={{justifyContent: "space-between"}}>
+            <GridContainer item xs={7} sm={7.8}>
+              <GlobalSelect options={options}/>
             </GridContainer>
-            <GridContainer item={true} xs={4}>
+            <GridContainer item xs={4}>
               <TimeSelect />
             </GridContainer>
           </GridContainer>
@@ -64,25 +72,15 @@ export default function GoalPage() {
               width: "100%",
             }}
           >
-            <GridContainer container={true}>
-              <GridContainer item={true} xs={12}>
+            <GridContainer container>
+              <GridContainer item xs={12}>
                 <CreateBtn onClick={handleCreateClick}/>
               </GridContainer>
             </GridContainer>
 
-            <GridContainer container={true} sx={{justifyContent: "space-between"}}>
-              {!isCreateClicked && <><GridContainer item={true} xs={8.8}>
-                <GrayBtn onClick={handleModal} text="Visualizar" />
-              </GridContainer>
-              <GridContainer item={true} xs={3}>
-                <GrayBtn src="download-icon.svg" />
-              </GridContainer></> }
-              {isCreateClicked && <><GridContainer item={true} xs={8.8}>
-                <GreenBtn onClick={handleModal} text="Visualizar" />
-              </GridContainer>
-              <GridContainer item={true} xs={3}>
-                <GreenBtn src="download-icon.svg" />
-              </GridContainer></>}
+            <GridContainer container sx={{justifyContent: "space-between"}}>
+              {!isCreateClicked && <TemplateViewDownloadBar onClick={handleModal} />}
+              {isCreateClicked && <GreenTemplateViewDownloadBar onClick={handleModal} />}
             </GridContainer>
             
             <Modal open={isModalOpen} onClose={handleModal}/>

@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import Select from "react-select";
+
+interface GlobalSelectProps{
+  options: Array<object>
+}
   
-export default function GlobalSelect() {
-  const options = [
-    { value: "Jogador", label: "Jogador" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
+export default function GlobalSelect({options}: GlobalSelectProps) {
 
   const selectStyle = {
     control: () => ({

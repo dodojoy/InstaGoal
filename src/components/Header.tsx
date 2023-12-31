@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -9,8 +8,6 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-
-//drawer elements used
 import Drawer from "@mui/material/Drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import Divider from "@mui/material/Divider";
@@ -19,10 +16,8 @@ import { Stack } from "@mui/material";
 import TemplateList from "./TemplateList";
 
 export default function Header() {
-  //react useState hook to save the current open/close state of the drawer, normally variables dissapear afte the function was executed
   const [open, setState] = useState(false);
 
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
   const toggleDrawer = (open: any) => (event: any) => {
     if (
       event.type === "keydown" &&
@@ -30,7 +25,7 @@ export default function Header() {
     ) {
       return;
     }
-    //changes the function state according to the value of open
+
     setState(open);
   };
 
@@ -67,7 +62,6 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
 
-          {/* The outside of the drawer */}
           <Drawer
             sx={{
               "& .MuiPaper-root": {
@@ -84,7 +78,6 @@ export default function Header() {
                 height: 1,
               }}
             >
-              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
               <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}>
                 <CloseIcon />
               </IconButton>

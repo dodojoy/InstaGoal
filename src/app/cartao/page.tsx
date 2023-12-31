@@ -53,7 +53,7 @@ export default function CardPage() {
           alignItems: "center",
           width: "80%",
           maxWidth: "700px",
-          gap: 35,
+          gap: 10,
         }}
       >
         <GridContainer
@@ -81,6 +81,7 @@ export default function CardPage() {
             flexDirection: "column",
             gap: 10,
             width: "100%",
+            marginTop: 25
           }}
         >
           <GridContainer container={true}>

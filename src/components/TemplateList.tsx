@@ -15,13 +15,14 @@ export default function TemplateList() {
   return (
     <>
       {templates.map((item) => (
-        <Link key={item.name} href={item.href} style={{ textDecoration: "none", color: "#6D6D6D" }}>
+        <Link key={item.name} href={item.href} style={{ textDecoration: "none" }}>
           <ListItemButton >
             <ListItemText
               sx={{
                 textTransform: "capitalize",
                 textAlign: "center",
                 fontWeight: 600,
+                color: {xs: "#6D6D6D", sm: "white"}
               }}
               primary={item.name}
             />
